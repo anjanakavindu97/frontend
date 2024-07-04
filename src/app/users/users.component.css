@@ -1,8 +1,7 @@
 table {
   width: 100%;
-  th,td {
-    padding: 1rem;
-    border: 1px solid gray;
-  }
 }
-
+th,td {
+  padding: 1rem;
+  border: 1px solid gray;
+}
