@@ -10,6 +10,9 @@ export class UserService {
   httpClient = inject(HttpClient);
   constructor() { }
 
+  addUser(modal: User) {
+    return this.httpClient.post(this.apiUrl+'/users', modal)
+  }
   getUsers() {
     return this.httpClient.get<User[]>(this.apiUrl+'/getusers')
   }

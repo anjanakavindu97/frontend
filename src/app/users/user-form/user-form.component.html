@@ -1,1 +1,30 @@
-<p>user-form works!</p>
+<div class="shadow border p-4">
+  <h4 class="text-xl font-semibold">Add User</h4>
+  <form [formGroup]="userForm">
+    <div class="flex flex-wrap">
+      <mat-form-field class="w-full">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email">
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Age</mat-label>
+        <input type="number" matInput formControlName="age">
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Address</mat-label>
+        <input type="text" matInput formControlName="address">
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password">
+      </mat-form-field>
+    </div>
+    <div class="flex justify-center">
+      <button mat-raised-button color="primary" (click)="addUser()">Add</button>
+    </div>
+  </form>
+</div>
