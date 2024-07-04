@@ -1,5 +1,10 @@
 <div class="shadow border p-4">
-  <h4 class="text-xl font-semibold">Add User</h4>
+  @if(editUserId) {
+    <h4 class="text-xl font-semibold">Update User</h4>
+  }
+  @else {
+    <h4 class="text-xl font-semibold">Add User</h4>
+  }
   <form [formGroup]="userForm">
     <div class="flex flex-wrap">
       <mat-form-field class="w-full">
@@ -24,7 +29,12 @@
       </mat-form-field>
     </div>
     <div class="flex justify-center">
+      @if(editUserId) {
+      <button mat-raised-button color="primary" (click)="updateUser()">Update</button>
+      }
+      @else {
       <button mat-raised-button color="primary" (click)="addUser()">Add</button>
+      }
     </div>
   </form>
 </div>

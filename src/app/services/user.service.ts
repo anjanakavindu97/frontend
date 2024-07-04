@@ -16,4 +16,16 @@ export class UserService {
   getUsers() {
     return this.httpClient.get<User[]>(this.apiUrl+'/getusers')
   }
+
+  getUser(id: String) {
+    return this.httpClient.get<User>(this.apiUrl+'/getuser/'+id)
+  }
+
+  updateUser(id: String ,modal: User) {
+    return this.httpClient.put(this.apiUrl+'/updateuser/'+id, modal)
+  }
+
+  deleteUser(id: String) {
+    return this.httpClient.delete(this.apiUrl+'/deleteuser/'+id)
+  }
 }

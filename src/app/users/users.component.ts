@@ -20,4 +20,14 @@ export class UsersComponent {
     })
   }
 
+  deleteUser(id: String) {
+    const ok = confirm("Are you sure you want to delete this user?")
+    if(ok) {
+      this.userService.deleteUser(id).subscribe(result => {
+        alert("User deleted successfully")
+        this.users = this.users.filter((user) => user._id !== id)
+      })
+    }
+  }
+
 }
